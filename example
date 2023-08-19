@@ -1,0 +1,59 @@
+CREATE TABLE `customers` (
+	`id` INT unsigned NOT NULL AUTO_INCREMENT,
+	`顧客姓名` VARCHAR(20) NOT NULL,
+	`電話` INT NOT NULL,
+	`生日` DATE NOT NULL,
+	PRIMARY KEY (`id`)
+);
+
+INSERT INTO `customers` (`顧客姓名`, `電話`, `生日`)
+VALUES ('Johny', '0980123123', '1997-04-22');
+
+INSERT INTO `customers` (`顧客姓名`, `電話`, `生日`)
+VALUES ('Wendy', '0919456456', '1999-07-07');
+
+CREATE TABLE `drinks` (
+  `id`    int(11)      unsigned NOT NULL AUTO_INCREMENT,
+  `name`  varchar(20)           NOT NULL,
+  `price` int(11)      unsigned NOT NULL,
+  `cost`  int(11)      unsigned NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+INSERT INTO `drinks` (`name`, `price`, `cost`)
+VALUES ('阿華田', 65, 20);
+
+INSERT INTO `drinks` (`name`, `price`, `cost`)
+VALUES ('百香紅茶', 45, 10);
+
+INSERT INTO `drinks` (`name`, `price`, `cost`)
+VALUES ('四季春茶', 25, 5);
+
+INSERT INTO `drinks` (`name`, `price`, `cost`)
+VALUES ('愛玉冰茶', 50, 7);
+
+INSERT INTO `drinks` (`name`, `price`, `cost`)
+VALUES ('冰咖啡', 70, 30);
+
+
+CREATE TABLE `orders` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`飲料編號` INT unsigned NOT NULL,
+	`顧客編號` INT(20) NOT NULL,
+	`數量` INT NOT NULL,
+	`建立日期` TIMESTAMP NOT NULL ON UPDATE CURRENT_TIMESTAMP,
+	PRIMARY KEY (`id`)
+);
+
+
+INSERT INTO `orders` (`飲料編號`, `顧客編號`, `數量`, `建立日期`)
+VALUES ('1','2', '4','2019-07-14 13:55:56');
+
+INSERT INTO `orders` (`飲料編號`, `顧客編號`, `數量`, `建立日期`)
+VALUES ('2','2', '3','2019-07-14 14:21:23');
+
+INSERT INTO `orders` (`飲料編號`, `顧客編號`, `數量`, `建立日期`)
+VALUES ('3','2', '9','2019-07-14 14:26:12');
+
+INSERT INTO `orders` (`飲料編號`, `顧客編號`, `數量`, `建立日期`)
+VALUES ('3','1', '2','2019-07-14 18:51:50');
